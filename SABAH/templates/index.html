@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+{% endblock links %}
+
+{% block navigation %}
+    {% include 'abbr\nabvar.html' %}
+{% endblock navigation %}
+
+{% block content %}
+{% if articles|length == 0 %}
+    <br><br>
+    <h1 style="text-align: center; color: #0F4C75;">:( Статьи не найдены.</h1>
+{% else %}
+    
+    {% for a in articles %}
+
+        <article>
+            <br><h2>{{a.Title}}</h2><h4>{{a.Tag}}</h4><hr color="#0F4C75">
+            <br><br>
+            <p>
+                {{a.Content}}
+            </p>
+            <br>
+            <div>
+                <p>Посмотрели: {{a.Views}}</p>
+                <a href="article-{{a.id}}">Посмотреть</a>
+            </div>
+            <br>
+        </article>
+        <br><br>
+
+    {% endfor %}
+
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,23 @@
+article {
+    width: 58vw;
+    padding: 0px 2vw;
+    margin: 0px auto;
+    background: #BBE1FA;
+}
+
+article > h2 {
+    text-align: center;
+    color: #0F4C75;
+}
+
+article > h4 {
+    text-align: center;
+}
+
+article > p {
+    display: -webkit-box;
+    line-clamp: 7;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

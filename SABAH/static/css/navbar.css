@@ -1,0 +1,26 @@
+nav {
+    height: 48px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    background: #1B262C;
+}
+
+nav > ul {
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > ul > li {
+    height: min-content;
+    margin: 5px;
+    font-size: 24px;
+    list-style-type: none;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: #3282B8;
+    font-family: 'Cascadia Mono', sans-serif;
+}
