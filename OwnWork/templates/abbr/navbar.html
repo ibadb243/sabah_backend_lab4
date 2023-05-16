@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <a href="{% url 'home' %}" class="navbar-brand">
+        <span class="brand-1">I</span><span class="brand-2">NEWS</span>
+    </a>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="{% url 'home' %}" class="item {% if request.path == '/' %}active{% endif %}">Main</a>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'new' %}" class="item {% if request.path == '/newest' or request.path == '/newest/' %}active{% endif %}">Newest</a>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'create' %}" class="item {% if request.path == '/create' or request.path == '/create/' %}active{% endif %}">Create</a>
+        </li>
+    </ul>
+</nav>

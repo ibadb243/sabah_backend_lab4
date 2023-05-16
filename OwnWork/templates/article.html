@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{article.title}}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+<body>
+    
+    {% include 'abbr/navbar.html' %}
+    <br><br><br><br>
+    <article>
+        <div class="article-info">
+            <a href="#" class="article-author-image">
+                <img src="{% static 'assets/' %}{{article.author.profile_image}}" alt="Profile's Image" width="64" height="64">
+            </a>
+            <div>
+                <p>by <a class="article-author" href="writer-{{article.author.id}}">{{article.author.name}} {{article.author.surname}}</a></p>
+                <h1>{{article.title}}</h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="context" style="height: fit-content;">
+                {% autoescape off %}
+                    {{article.content}}
+                {% endautoescape %}
+            </div>
+        </div>
+    </article>
+
+</body>
+</html>
